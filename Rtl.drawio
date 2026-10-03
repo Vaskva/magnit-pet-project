@@ -1,0 +1,61 @@
+<mxfile host="Electron">
+  <diagram name="Страница-1" id="p3p8dh7nF8vD1gFBT4Sd">
+    <mxGraphModel dx="1178" dy="701" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BqaKtsroYc7t1bX6lbTw-1" parent="1" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;horizontal=0;startSize=70;horizontalStack=0;whiteSpace=wrap;" value="Модуль моментального начисления кэшбэка и обновления баланса в приложении &quot;Магнит&quot; после покупки" vertex="1">
+          <mxGeometry height="380" width="1460" x="20" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BqaKtsroYc7t1bX6lbTw-2" parent="BqaKtsroYc7t1bX6lbTw-1" style="swimlane;html=1;startSize=40;horizontal=0;" value="Касса" vertex="1">
+          <mxGeometry height="120" width="1390" x="70" as="geometry" />
+        </mxCell>
+        <mxCell id="BqaKtsroYc7t1bX6lbTw-9" edge="1" parent="BqaKtsroYc7t1bX6lbTw-2" source="BqaKtsroYc7t1bX6lbTw-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="BqaKtsroYc7t1bX6lbTw-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BqaKtsroYc7t1bX6lbTw-7" parent="BqaKtsroYc7t1bX6lbTw-2" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=standard;symbol=general;" value="Чек оплачен" vertex="1">
+          <mxGeometry height="50" width="50" x="70" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="BqaKtsroYc7t1bX6lbTw-8" parent="BqaKtsroYc7t1bX6lbTw-2" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;" value="Сформировать пакет данных чека" vertex="1">
+          <mxGeometry height="80" width="120" x="170" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BqaKtsroYc7t1bX6lbTw-3" parent="BqaKtsroYc7t1bX6lbTw-1" style="swimlane;html=1;startSize=40;horizontal=0;" value="Брокер&amp;nbsp;&lt;div&gt;Apache Kafka&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="1390" x="70" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="BqaKtsroYc7t1bX6lbTw-10" parent="BqaKtsroYc7t1bX6lbTw-3" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;" value="Записать чек в топик &quot;cheques-v1&quot;" vertex="1">
+          <mxGeometry height="80" width="120" x="360" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BqaKtsroYc7t1bX6lbTw-4" parent="BqaKtsroYc7t1bX6lbTw-1" style="swimlane;html=1;startSize=40;horizontal=0;" value="Сервер&amp;nbsp;&lt;div&gt;лояльности&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="1390" x="70" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="BqaKtsroYc7t1bX6lbTw-12" parent="BqaKtsroYc7t1bX6lbTw-4" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;" value="Прочитать новое сообщение из топика" vertex="1">
+          <mxGeometry height="80" width="120" x="550" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BqaKtsroYc7t1bX6lbTw-18" edge="1" parent="BqaKtsroYc7t1bX6lbTw-4" source="BqaKtsroYc7t1bX6lbTw-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="BqaKtsroYc7t1bX6lbTw-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BqaKtsroYc7t1bX6lbTw-15" parent="BqaKtsroYc7t1bX6lbTw-4" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;" value="Рассчитать сумму бонусных баллов" vertex="1">
+          <mxGeometry height="80" width="120" x="737" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BqaKtsroYc7t1bX6lbTw-16" edge="1" parent="BqaKtsroYc7t1bX6lbTw-4" source="BqaKtsroYc7t1bX6lbTw-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="BqaKtsroYc7t1bX6lbTw-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BqaKtsroYc7t1bX6lbTw-20" edge="1" parent="BqaKtsroYc7t1bX6lbTw-4" source="BqaKtsroYc7t1bX6lbTw-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="BqaKtsroYc7t1bX6lbTw-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BqaKtsroYc7t1bX6lbTw-17" parent="BqaKtsroYc7t1bX6lbTw-4" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;" value="Обновить баланс бонусов и историю в БД" vertex="1">
+          <mxGeometry height="80" width="120" x="924" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BqaKtsroYc7t1bX6lbTw-19" parent="BqaKtsroYc7t1bX6lbTw-4" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=terminate2;" value="Баланс бонусов&lt;div&gt;&amp;nbsp;обновлен&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="50" x="1126" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="BqaKtsroYc7t1bX6lbTw-11" edge="1" parent="BqaKtsroYc7t1bX6lbTw-1" source="BqaKtsroYc7t1bX6lbTw-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.375;entryDx=0;entryDy=0;entryPerimeter=0;" target="BqaKtsroYc7t1bX6lbTw-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BqaKtsroYc7t1bX6lbTw-14" edge="1" parent="BqaKtsroYc7t1bX6lbTw-1" source="BqaKtsroYc7t1bX6lbTw-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="BqaKtsroYc7t1bX6lbTw-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
