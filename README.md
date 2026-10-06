@@ -128,7 +128,7 @@ JOIN magnit.bonus_transactions t ON t.receipt_id = r.id;
 
 ### Итоговая запись в БД:
 
- ![Результат SQL-запроса](resultmagnisql.png)
+ ![Результат SQL-запроса](sqlresult.png)
 
 
 ### Перевод модуля лояльности на асинхронную событийную архитектуру (Event-Driven Architecture) позволяет достичь следующих показателей: 
